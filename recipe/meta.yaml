@@ -1,5 +1,5 @@
 {% set name = "parcel" %}
-{% set version = "2.2.1" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name }}js
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://registry.npmjs.org/{{ name }}/-/{{ name }}-{{ version }}.tgz
-  sha256: 56855f259b66ae42d27c2f91526757fdca88fdb904b2f79adfdd8a1d558e9b4f
+  sha256: 1be3a082ee6949e33ed97a3b4c3c3ffafb3ed25f0e62d9da3207dd876add97eb
 
 build:
   number: 0
