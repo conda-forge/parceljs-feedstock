@@ -22,7 +22,7 @@ requirements:
   host:
     - nodejs
     - node-gyp
-    - yarn
+    - yarn <2
   run:
     - nodejs
 
