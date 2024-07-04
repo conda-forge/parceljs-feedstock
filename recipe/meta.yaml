@@ -10,15 +10,15 @@ source:
   sha256: e3230dabc2a9363d5650ee8aa79592dff66d3c8287895508c04c111a49f4018d
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - make
-    - sysroot_linux-64 2.17  # [linux64]
   host:
     - nodejs
     - node-gyp
