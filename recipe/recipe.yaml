@@ -1,23 +1,26 @@
-{% set name = "parcel" %}
-{% set version = "2.16.0" %}
+schema_version: 1
+
+context:
+  name: parcel
+  version: 2.16.0
 
 package:
-  name: {{ name }}js
-  version: {{ version }}
+  name: ${{ name }}js
+  version: ${{ version }}
 
 source:
-  url: https://registry.npmjs.org/{{ name }}/-/{{ name }}-{{ version }}.tgz
+  url: https://registry.npmjs.org/${{ name }}/-/${{ name }}-${{ version }}.tgz
   sha256: 5f4617138a511bde21f6da2b7371aa9498e50e24ceaed2fbbedf0ccde3c469a3
 
 build:
   number: 0
-  skip: true  # [win]
+  skip: win
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
-    - {{ compiler('cxx') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
     - make
   host:
     - nodejs
@@ -26,17 +29,17 @@ requirements:
   run:
     - nodejs
 
-test:
-  commands:
-    - parcel --help
+tests:
+  - script:
+      - parcel --help
 
 about:
-  home: https://github.com/parcel-bundler/parcel
   license: MIT
   license_file:
     - LICENSE
     - ThirdPartyLicenses.txt
   summary: Blazing fast, zero configuration web application bundler
+  homepage: https://github.com/parcel-bundler/parcel
 
 extra:
   recipe-maintainers:
